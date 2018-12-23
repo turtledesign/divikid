@@ -1,0 +1,28 @@
+{
+  "name": "divikid",
+  "version": "000.03.00.00",
+  "description": "Child theme for Divi with build tools.",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "stefan@turtledesign.com",
+  "license": "MIT",
+  "homepage": "https://github.com/turtledesign/divikid",
+  "devDependencies": {
+    "grunt": "^1.0.3",
+    "grunt-autoprefixer": "^3.0.4",
+    "grunt-cache-pug-compile": "^4.0.0",
+    "grunt-contrib-clean": "^2.0.0",
+    "grunt-contrib-compress": "^1.4.3",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-pug": "^2.0.0",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-sass": "^3.0.2",
+    "grunt-typescript": "^0.8.0",
+    "node-sass": "^4.11.0",
+    "pug": "^2.0.3",
+    "pug-inheritance": "^3.0.0-beta.2"
+  },
+  "dependencies": {}
+}
