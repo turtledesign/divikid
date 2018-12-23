@@ -1,3 +1,4 @@
+// Major ver. Minor ver. Feature add. Bugfix add - #1234 is internal ticket number.
 
-
-000.03.00.00 2018-12-23 #4145 Minimum working version generating style.css, functions.php + creating archive zip.
+0.03.01.00 2018-12-23 #4145 Added mkdir for the dist folders to avoid having to have multiple excludes for git & zip creation.
+0.03.00.00 2018-12-23 #4145 Minimum working version generating style.css, functions.php + creating archive zip.

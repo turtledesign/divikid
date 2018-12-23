@@ -16,14 +16,22 @@ module.exports = function(grunt) {
       src_pug:         '<%= paths.src %>/pug',
       src_sass:        '<%= paths.src %>/sass',
       src_ts:          '<%= paths.src %>/typescript',
-      live:            '',      // For use while developing, copy compiled files to wordpress/themes on watch.
-      archive:         '<%= paths.dist %>/<%= pkg.name %>.zip'
+      live:            '',                                       // For use while developing, sync compiled files to active wordpress/themes dir on watch.
+      archive:         '<%= paths.dist %>/<%= pkg.name %>.zip'   // After cloning change the project name in package.json or change here.
     },
 
     clean: {
       all: ['<%= paths.dist_uc %>', '<%= paths.archive %>']
     }, 
 
+    // Create the dist dir if it doesn't exist to save messing around with .gitinclude
+    mkdir: {
+      dist: {
+        options: {
+          create: ['<%= paths.dist_uc %>']
+        }
+      }
+    },
 
    // Sass compiling. Compression left to WP/main theme for now.
    sass: {
@@ -141,6 +149,7 @@ module.exports = function(grunt) {
 
  // Plugin loads
  grunt.loadNpmTasks('grunt-sass');
+ grunt.loadNpmTasks('grunt-mkdir');
  grunt.loadNpmTasks('grunt-contrib-compress');
  grunt.loadNpmTasks('grunt-cache-pug-compile'); // Only update changed templates rather than full recompile.
  grunt.loadNpmTasks('grunt-contrib-pug');
@@ -153,6 +162,7 @@ module.exports = function(grunt) {
 
  // Default task.
  grunt.registerTask('default', [
+    'mkdir:dist',
     'clean:all', 
     'sass:expanded', 
     'autoprefixer:expanded', 
